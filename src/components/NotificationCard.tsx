@@ -7,6 +7,10 @@ interface NotificationCardProps {
   bgColor?: string;
 }
 
+/**
+ * Notification card component
+ * Displays notification with icon and description
+ */
 export function NotificationCard({ title, description, icon, bgColor = "bg-blue-50" }: NotificationCardProps) {
   return (
     <Card className="hover:shadow-md transition-shadow">

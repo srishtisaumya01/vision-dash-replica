@@ -7,6 +7,10 @@ interface CoordinatorCardProps {
   avatarColor?: string;
 }
 
+/**
+ * Coordinator card component
+ * Displays coordinator information with avatar
+ */
 export function CoordinatorCard({ name, school, avatarColor = "bg-pink-300" }: CoordinatorCardProps) {
   const initials = name.split(" ").map(n => n[0]).join("");
   

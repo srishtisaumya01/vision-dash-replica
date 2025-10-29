@@ -3,6 +3,10 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
+/**
+ * Dashboard header component
+ * Contains search bar, location selector, notifications, and user actions
+ */
 export function DashboardHeader() {
   return (
     <header className="h-16 border-b bg-card flex items-center justify-between px-6">

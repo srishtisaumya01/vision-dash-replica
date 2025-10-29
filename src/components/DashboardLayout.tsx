@@ -6,6 +6,10 @@ interface DashboardLayoutProps {
   children: React.ReactNode;
 }
 
+/**
+ * Main dashboard layout component
+ * Wraps pages with sidebar and header
+ */
 export function DashboardLayout({ children }: DashboardLayoutProps) {
   return (
     <SidebarProvider defaultOpen={true}>

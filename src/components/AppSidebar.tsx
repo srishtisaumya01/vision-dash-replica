@@ -1,4 +1,4 @@
-import { Home, GraduationCap, MapPin, Briefcase, FileText, Settings } from "lucide-react";
+import { GraduationCap } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import {
   Sidebar,
@@ -10,16 +10,12 @@ import {
   SidebarMenuButton,
   useSidebar,
 } from "@/components/ui/sidebar";
+import { NAVIGATION_ITEMS } from "@/constants/navigation";
 
-const items = [
-  { title: "Home", url: "/", icon: Home },
-  { title: "Students", url: "/students", icon: GraduationCap },
-  { title: "Center", url: "/center", icon: MapPin },
-  { title: "Training", url: "/training", icon: Briefcase },
-  { title: "Applications", url: "/applications", icon: FileText, badge: "6" },
-  { title: "Settings", url: "/settings", icon: Settings },
-];
-
+/**
+ * Application sidebar component
+ * Displays navigation menu with collapsible functionality
+ */
 export function AppSidebar() {
   const { open } = useSidebar();
 
@@ -37,7 +33,7 @@ export function AppSidebar() {
         <SidebarGroup className="mt-4">
           <SidebarGroupContent>
             <SidebarMenu>
-              {items.map((item) => (
+              {NAVIGATION_ITEMS.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton
                     asChild

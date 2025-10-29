@@ -1,5 +1,9 @@
 import { Sparkles } from "lucide-react";
 
+/**
+ * Welcome banner component
+ * Displays greeting message in Hindi with decorative building illustration
+ */
 export function WelcomeBanner() {
   return (
     <div className="relative overflow-hidden rounded-xl p-8 bg-gradient-to-r from-primary via-primary to-accent text-primary-foreground shadow-lg">

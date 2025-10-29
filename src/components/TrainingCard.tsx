@@ -8,6 +8,10 @@ interface TrainingCardProps {
   variant?: "blue" | "pink";
 }
 
+/**
+ * Training program card component
+ * Displays training information with illustration and apply button
+ */
 export function TrainingCard({ title, description, illustration, variant = "blue" }: TrainingCardProps) {
   const bgColor = variant === "blue" ? "bg-blue-50" : "bg-pink-50";
   
