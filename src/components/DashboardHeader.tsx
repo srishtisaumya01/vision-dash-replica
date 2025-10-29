@@ -1,13 +1,22 @@
-import { Search, Bell, Settings, User } from "lucide-react";
+import { Search, Bell, Settings, User, LogOut } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { useAuth } from "@/contexts/AuthContext";
 
 /**
  * Dashboard header component
  * Contains search bar, location selector, notifications, and user actions
  */
 export function DashboardHeader() {
+  const navigate = useNavigate();
+  const { logout } = useAuth();
+
+  const handleLogout = () => {
+    logout();
+    navigate('/login');
+  };
   return (
     <header className="h-16 border-b bg-card flex items-center justify-between px-6">
       <div className="flex-1 max-w-md">
@@ -39,6 +48,10 @@ export function DashboardHeader() {
 
         <Button variant="ghost" size="icon" className="rounded-full">
           <User className="w-5 h-5" />
+        </Button>
+
+        <Button variant="ghost" size="icon" onClick={handleLogout} title="Logout">
+          <LogOut className="w-5 h-5" />
         </Button>
       </div>
     </header>
