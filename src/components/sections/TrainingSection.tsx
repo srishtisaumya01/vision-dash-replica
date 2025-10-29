@@ -1,7 +1,7 @@
 import { GraduationCap, Users } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { TrainingCard } from "@/components/TrainingCard";
+import { Button } from "@/components/ui/button";
 import { TRAINING_PROGRAMS } from "@/constants/dashboard";
 
 /**
@@ -22,23 +22,34 @@ export function TrainingSection() {
       </CardHeader>
       <CardContent>
         <div className="flex flex-col gap-4">
-          {TRAINING_PROGRAMS.map((program, index) => (
-            <TrainingCard
-              key={program.title}
-              title={program.title}
-              description={program.description}
-              illustration={
-                <div className={`w-24 h-24 ${program.variant === 'blue' ? 'bg-blue-200' : 'bg-pink-200'} rounded-lg flex items-center justify-center`}>
-                  {index === 0 ? (
-                    <GraduationCap className={`w-12 h-12 ${program.variant === 'blue' ? 'text-blue-600' : 'text-pink-600'}`} />
-                  ) : (
-                    <Users className={`w-12 h-12 ${program.variant === 'blue' ? 'text-blue-600' : 'text-pink-600'}`} />
-                  )}
-                </div>
-              }
-              variant={program.variant}
-            />
-          ))}
+          {TRAINING_PROGRAMS.map((program, index) => {
+            const bgColor = program.variant === "blue" ? "bg-blue-50" : "bg-pink-50";
+            const iconBg = program.variant === "blue" ? "bg-blue-200" : "bg-pink-200";
+            const iconColor = program.variant === "blue" ? "text-blue-600" : "text-pink-600";
+            
+            return (
+              <Card key={program.title} className="overflow-hidden hover:shadow-md transition-shadow">
+                <CardContent className="p-0">
+                  <div className={`${bgColor} p-6 flex items-center justify-center min-h-[140px]`}>
+                    <div className={`w-24 h-24 ${iconBg} rounded-lg flex items-center justify-center`}>
+                      {index === 0 ? (
+                        <GraduationCap className={`w-12 h-12 ${iconColor}`} />
+                      ) : (
+                        <Users className={`w-12 h-12 ${iconColor}`} />
+                      )}
+                    </div>
+                  </div>
+                  <div className="p-5">
+                    <h3 className="font-semibold text-lg mb-2">{program.title}</h3>
+                    <p className="text-sm text-muted-foreground mb-4 line-clamp-2">{program.description}</p>
+                    <Button className="w-full bg-primary hover:bg-primary/90">
+                      Apply Now
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            );
+          })}
         </div>
       </CardContent>
     </Card>

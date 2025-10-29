@@ -2,6 +2,7 @@ import { WelcomeBanner } from "@/components/WelcomeBanner";
 import { TrainingSection } from "@/components/sections/TrainingSection";
 import { ApplicationsTable } from "@/components/sections/ApplicationsTable";
 import { CoordinatorsSection } from "@/components/sections/CoordinatorsSection";
+import { LokpriyaSection } from "@/components/sections/LokpriyaSection";
 
 /**
  * Main dashboard page
@@ -16,6 +17,8 @@ const Index = () => {
         <TrainingSection />
         <ApplicationsTable />
       </div>
+
+      <LokpriyaSection />
 
       {/* Coordinators Section */}
       <CoordinatorsSection />

@@ -34,3 +34,11 @@ export interface Notification {
   bgColor: string;
   iconType: "users" | "school" | "file";
 }
+
+export interface LokpriyaCenter {
+  id: number;
+  title: string;
+  location: string;
+  description: string;
+  bgColor: string;
+}
