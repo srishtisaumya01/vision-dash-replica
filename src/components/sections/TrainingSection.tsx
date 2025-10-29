@@ -21,7 +21,7 @@ export function TrainingSection() {
         </Badge>
       </CardHeader>
       <CardContent>
-        <div className="grid md:grid-cols-2 gap-4">
+        <div className="flex flex-col gap-4">
           {TRAINING_PROGRAMS.map((program, index) => (
             <TrainingCard
               key={program.title}
