@@ -13,12 +13,11 @@ const Index = () => {
     <div className="p-6 space-y-6">
       <WelcomeBanner />
 
-      <div className="grid lg:grid-cols-2 gap-6">
+      <div className="grid lg:grid-cols-3 gap-6">
         <TrainingSection />
+        <LokpriyaSection />
         <ApplicationsTable />
       </div>
-
-      <LokpriyaSection />
 
       {/* Coordinators Section */}
       <CoordinatorsSection />
