@@ -21,10 +21,6 @@ const Login = () => {
     setStep('otp');
   };
 
-  const handleSkip = () => {
-    login();
-    navigate('/');
-  };
 
   const handleOtpLogin = () => {
     // Static validation - in production, validate against backend
@@ -56,25 +52,13 @@ const Login = () => {
           </div>
 
           {/* Login Button */}
-          <div className="space-y-4">
-            <Button 
-              onClick={handleInitialLogin}
-              className="w-full h-12 text-base font-medium"
-              size="lg"
-            >
-              Login
-            </Button>
-
-            {/* Skip Link */}
-            <div className="text-center">
-              <button
-                onClick={handleSkip}
-                className="text-primary hover:underline text-sm font-medium"
-              >
-                Skip
-              </button>
-            </div>
-          </div>
+          <Button 
+            onClick={handleInitialLogin}
+            className="w-full h-12 text-base font-medium"
+            size="lg"
+          >
+            Login
+          </Button>
         </div>
       </div>
     );
