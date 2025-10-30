@@ -15,7 +15,7 @@ export function LokpriyaSection() {
       </CardHeader>
       <CardContent>
         <ScrollArea className="h-[400px] w-full">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pr-4">
+          <div className="grid grid-cols-4 gap-4 pr-4">
             {LOKPRIYA_CENTERS.map((center) => (
               <Card key={center.id} className="overflow-hidden hover:shadow-md transition-shadow h-full">
                 <CardContent className="p-0">
